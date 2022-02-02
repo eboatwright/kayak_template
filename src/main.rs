@@ -1,3 +1,4 @@
+use std::any::Any;
 use macroquad::prelude::*;
 use rutoe::*;
 
@@ -34,11 +35,12 @@ impl State for GameState {
     }
 
     fn render(&self, resources: &Box<dyn ResourceContainer>) {
-        let resources = convert_resources::<Resources>(resources);
+        let resources: &Resources = convert_resources(resources.as_any());
     }
 }
 
-#[derive(Clone)]
 struct Resources {
 }
-impl ResourceContainer for Resources {}
+impl ResourceContainer for Resources {
+    fn as_any(&self) -> &dyn Any { self as &dyn Any }
+}
