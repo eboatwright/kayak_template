@@ -1,7 +1,7 @@
 use macroquad::prelude::*;
 use rutoe::*;
 
-#[macroquad::main(|| {
+fn window_conf() -> Conf {
     Conf {
         window_title: "RUTOE Template".to_string(),
         window_width: 960,
@@ -9,9 +9,11 @@ use rutoe::*;
         window_resizable: true,
         ..Default::default()
     }
-})]
+}
+
+#[macroquad::main(window_conf)]
 async fn main() {
-    let mut master = Master::default();
+    let mut master = Master {
         state: Box::new(GameState {
         }),
         resources: Box::new(Resources {
@@ -32,10 +34,11 @@ impl State for GameState {
     }
 
     fn render(&self, resources: &Box<dyn ResourceContainer>) {
-        let resources: &Resources = convert_resources(resources);
+        let resources = convert_resources::<Resources>(resources);
     }
 }
 
+#[derive(Clone)]
 struct Resources {
 }
 impl ResourceContainer for Resources {}
