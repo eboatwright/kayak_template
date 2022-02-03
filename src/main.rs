@@ -1,6 +1,7 @@
 mod game_state;
 mod resources;
 
+use kayak::Context;
 use kayak::Viewport;
 use crate::game_state::GameState;
 use kayak::start;
@@ -23,11 +24,12 @@ async fn main() {
     let mut master = Master {
         state: Box::new(GameState {
         }),
-        resources: Box::new(Resources {
-        }),
+        context: Context {
+            resources: Box::new(Resources {
+            }),
+            viewport: Viewport::new(vec2(960.0, 600.0)),
+        },
     };
 
-    let viewport = Viewport::new(vec2(960.0, 600.0));
-
-    start(&mut master, viewport).await;
+    start(&mut master).await;
 }
