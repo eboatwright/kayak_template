@@ -10,7 +10,7 @@ use macroquad::prelude::*;
 
 fn window_conf() -> Conf {
     Conf {
-        window_title: "kayak Template".to_string(),
+        window_title: "Kayak Template".to_string(),
         window_width: 960,
         window_height: 600,
         window_resizable: true,

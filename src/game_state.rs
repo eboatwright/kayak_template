@@ -8,7 +8,7 @@ pub struct GameState {
 }
 
 impl State for GameState {
-    fn initialize(&mut self) {
+    fn initialize(&mut self, viewport: &mut Viewport) {
     }
 
     fn update(&mut self, _viewport: &mut Viewport) {
