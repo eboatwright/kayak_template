@@ -1,8 +1,8 @@
-use rutoe::Viewport;
-use rutoe::convert_resources;
+use kayak::Viewport;
+use kayak::convert_resources;
 use crate::Resources;
-use rutoe::ResourceContainer;
-use rutoe::State;
+use kayak::ResourceContainer;
+use kayak::State;
 
 pub struct GameState {
 }

@@ -1,16 +1,16 @@
 mod game_state;
 mod resources;
 
-use rutoe::Viewport;
+use kayak::Viewport;
 use crate::game_state::GameState;
-use rutoe::start;
-use rutoe::Master;
+use kayak::start;
+use kayak::Master;
 use crate::resources::Resources;
 use macroquad::prelude::*;
 
 fn window_conf() -> Conf {
     Conf {
-        window_title: "RUTOE Template".to_string(),
+        window_title: "kayak Template".to_string(),
         window_width: 960,
         window_height: 600,
         window_resizable: true,
