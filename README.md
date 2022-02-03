@@ -1,13 +1,11 @@
 # Notice
  This is extremely early in development, and major changes are happening all the time!
 
-# Template for my "Game Engine" RUTOE!
- A non ECS "Game Engine" for Rust and Macroquad!<br><br>
- Are you tired of ECS? Well you're in luck!<br>
- RUTOE is a simple to use, lightweight "Game Engine" with lots of stuff built in!
+# Template for my "Game Engine" Kayak!
+ Kayak is a simple to use, non ECS "Game Engine" for Rust and Macroquad!
 
 # Check the Main Repository for Information Like Building and Running
- https://github.com/eboatwright/rutoe
+ https://github.com/eboatwright/kayak
 
 # License & Copyright
  This repository is under the MIT license.<br>
