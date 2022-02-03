@@ -1,6 +1,12 @@
-use std::any::Any;
+mod game_state;
+mod resources;
+
+use rutoe::Viewport;
+use crate::game_state::GameState;
+use rutoe::start;
+use rutoe::Master;
+use crate::resources::Resources;
 use macroquad::prelude::*;
-use rutoe::*;
 
 fn window_conf() -> Conf {
     Conf {
@@ -21,26 +27,7 @@ async fn main() {
         }),
     };
 
-    start(&mut master).await;
-}
+    let viewport = Viewport::new(vec2(960.0, 600.0));
 
-struct GameState {
-}
-
-impl State for GameState {
-    fn initialize(&mut self) {
-    }
-
-    fn update(&mut self) {
-    }
-
-    fn render(&self, resources: &Box<dyn ResourceContainer>) {
-        let resources: &Resources = convert_resources(resources.as_any());
-    }
-}
-
-struct Resources {
-}
-impl ResourceContainer for Resources {
-    fn as_any(&self) -> &dyn Any { self as &dyn Any }
+    start(&mut master, viewport).await;
 }
