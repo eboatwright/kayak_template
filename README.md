@@ -1,3 +1,6 @@
+# Notice
+ This is extremely early in development, and major changes are happening all the time!
+
 # Template for my "Game Engine" RUTOE!
  A non ECS "Game Engine" for Rust and Macroquad!<br><br>
  Are you tired of ECS? Well you're in luck!<br>
