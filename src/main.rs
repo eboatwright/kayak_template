@@ -1,11 +1,9 @@
 mod game_state;
 mod resources;
 
-use kayak::Context;
 use kayak::Viewport;
 use crate::game_state::GameState;
 use kayak::start;
-use kayak::Master;
 use crate::resources::Resources;
 use macroquad::prelude::*;
 
@@ -21,15 +19,10 @@ fn window_conf() -> Conf {
 
 #[macroquad::main(window_conf)]
 async fn main() {
-    let mut master = Master {
-        state: Box::new(GameState {
-        }),
-        context: Context {
-            resources: Box::new(Resources {
-            }),
-            viewport: Viewport::new(vec2(960.0, 600.0)),
-        },
-    };
+    let resources = Box::new(Resources {
+    });
 
-    start(&mut master).await;
+    let viewport = Viewport::new(vec2(960.0, 600.0));
+
+    start(Box::new(GameState::default()), viewport, resources).await;
 }

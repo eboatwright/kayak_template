@@ -1,3 +1,4 @@
+use kayak::UpdateStatus;
 use kayak::Context;
 use crate::Resources;
 use kayak::State;
@@ -5,11 +6,16 @@ use kayak::State;
 pub struct GameState {
 }
 
-impl State for GameState {
-    fn initialize(&mut self, _context: &mut Context) {
+impl Default for GameState {
+    fn default() -> Self {
+        Self {
+        }
     }
+}
 
-    fn update(&mut self, _context: &mut Context) {
+impl State for GameState {
+    fn update(&mut self, _context: &mut Context) -> UpdateStatus {
+        UpdateStatus::Ok
     }
 
     fn render(&self, context: &Context) {
